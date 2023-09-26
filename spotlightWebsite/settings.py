@@ -14,16 +14,20 @@ from pathlib import Path
 import os
 import boto3
 from storages.backends.s3boto3 import S3Boto3Storage
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # settings.py
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # s3 as a backend
-AWS_ACCESS_KEY_ID='AKIAUVR5QK3IVEFMS55D'
-AWS_SECRET_ACCESS_KEY='OnpuE6VMbZ1HhhBCKIp9KGxt9vHAUGMYzqV+QA72'
-AWS_STORAGE_BUCKET_NAME = 'spotlight-16th-ward'
-AWS_S3_REGION_NAME = 'us-east-2'  # e.g., 'us-east-1'
+AWS_ACCESS_KEY_ID= os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY=os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
 AWS_DEFAULT_ACL = None
 AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
@@ -55,7 +59,7 @@ SECRET_KEY = 'django-insecure-qhl%j&isxgum=0e)ju^_-g4ngtp(pz_^k54lyo#5wlz6m$n$@e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://spotlight.us-west-2.elasticbeanstalk.com/']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
