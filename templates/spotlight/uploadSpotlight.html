@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+    Upload
+{% endblock %}
+{% block content %}
+<h1>Upload a spotlight</h1>
+
+<form action="" method="post" enctype=multipart/form-data>
+    {% csrf_token %}
+    {% crispy form %}
+</form>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load filters %}
+
+
+{% block title %}
+    Queue
+{% endblock %}
+{% block content %}
+<div>
+<h2>Not Started</h2>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        {% for spotlight in not_started %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ spotlight.image.url }}" class="card-img-top" alt="{{ spotlight.last_name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ spotlight.first_name_husband }} and {{ spotlight.first_name_wife }} {{ spotlight.last_name }}</h5>
+                        <p class="card-text text-truncate">{{ spotlight.bio }}</p>
+                        <a href="{% url 'edit' spotlight.id %}" class="btn btn-primary">Edit the {{ spotlight.last_name }}</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>Asked</h2>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        {% for spotlight in asked %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ spotlight.image.url }}" class="card-img-top" alt="{{ spotlight.last_name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ spotlight.first_name_husband }} and {{ spotlight.first_name_wife }} {{ spotlight.last_name }}</h5>
+                        <p class="card-text text-truncate">{{ spotlight.bio }}</p>
+                        <a href="{% url 'edit' spotlight.id %}" class="btn btn-primary">Edit the {{ spotlight.last_name }}</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+<h2>Ready</h2>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        {% for spotlight in ready %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ spotlight.image.url }}" class="card-img-top" alt="{{ spotlight.last_name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ spotlight.first_name_husband }} and {{ spotlight.first_name_wife }} {{ spotlight.last_name }}</h5>
+                        <p class="card-text text-truncate">{{ spotlight.bio }}</p>
+                        <a href="{% url 'edit' spotlight.id %}" class="btn btn-primary">Edit the {{ spotlight.last_name }}</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+    <h2>Planned</h2>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        {% for spotlight in planned %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ spotlight.image.url }}" class="card-img-top" alt="{{ spotlight.last_name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ spotlight.first_name_husband }} and {{ spotlight.first_name_wife }} {{ spotlight.last_name }}</h5>
+                        <p class="card-text text-truncate">{{ spotlight.bio }}</p>
+                        <a href="{% url 'edit' spotlight.id %}" class="btn btn-primary">Edit the {{ spotlight.last_name }}</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>Slacked</h2>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        {% for spotlight in slacked %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ spotlight.image.url }}" class="card-img-top" alt="{{ spotlight.last_name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ spotlight.first_name_husband }} and {{ spotlight.first_name_wife }} {{ spotlight.last_name }}</h5>
+                        <p class="card-text text-truncate">{{ spotlight.bio }}</p>
+                        <a href="{% url 'edit' spotlight.id %}" class="btn btn-primary">Edit the {{ spotlight.last_name }}</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+

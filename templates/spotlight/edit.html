@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %} Edit {% endblock %}
+
+{% block content %}
+<form action="" method="POST" enctype=multipart/form-data>
+		{% csrf_token %}
+		{% crispy form %}
+</form>
+    <br>
+    <a href="{% url 'queue' %}" type="button" class="btn btn-secondary">Back to Queue</a>
+    <br><br>
+    <a href="{% url 'delete' spotlight.id %}" type="button" class="btn btn-danger">Delete</a>
+{% endblock %}
+

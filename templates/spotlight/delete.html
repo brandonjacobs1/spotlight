@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Delete</title>
+{% endblock title %}
+
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <br><br>
+        <div class="alert alert-danger" role="alert">
+            Are you sure you want to delete "{{ employee.emp_name }}"?
+        </div>
+            <a href="{% url 'queue' %}" type="button" class="btn btn-primary">Back</a>
+            <input class="btn btn-danger" type="submit" value="Confirm">
+    </form>
+
+{% endblock content %}
