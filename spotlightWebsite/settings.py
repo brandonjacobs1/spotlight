@@ -54,7 +54,7 @@ STATIC_URL = "static/"
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-qhl%j&isxgum=0e)ju^_-g4ngtp(pz_^k54lyo#5wlz6m$n$@e'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -129,7 +129,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': db_password,
         'PORT': '5432',
-        'HOST': 'spotlight.cqkrc5rvfjwo.us-east-2.rds.amazonaws.com'
+        'HOST': os.getenv('DB_HOST')
     }
 }
 
