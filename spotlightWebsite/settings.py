@@ -33,17 +33,18 @@ AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
 
 # # s3 static settings
-# STATIC_LOCATION = 'static'
-# STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
-# STATICFILES_STORAGE = 'spotlight.storage_backends.StaticStorage'
+STATIC_LOCATION = 'static'
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
+STATICFILES_STORAGE = 'spotlight.storage_backends.StaticStorage'
+
 # s3 public media settings
 PUBLIC_MEDIA_LOCATION = 'media'
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
 DEFAULT_FILE_STORAGE = 'spotlight.storage_backends.PublicMediaStorage'
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
-STATIC_URL = "static/"
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+#
+# STATIC_URL = "static/"
 
 
 
