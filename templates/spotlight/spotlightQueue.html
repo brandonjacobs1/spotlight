@@ -12,7 +12,11 @@
         {% for spotlight in not_started %}
         <div class="col">
             <div class="card" style="width: 18rem;">
-                <img src="{{ spotlight.image.url }}" class="card-img-top" alt="{{ spotlight.last_name }}">
+                {% if spotlight.image %}
+                    <img src="{{ spotlight.image.url }}" class="card-img-top" alt="{{ spotlight.last_name }}">
+                {% else %}
+                    <p>No image available</p>
+                {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ spotlight.first_name_husband }} and {{ spotlight.first_name_wife }} {{ spotlight.last_name }}</h5>
                         <p class="card-text text-truncate">{{ spotlight.bio }}</p>
@@ -28,7 +32,11 @@
         {% for spotlight in asked %}
         <div class="col">
             <div class="card" style="width: 18rem;">
-                <img src="{{ spotlight.image.url }}" class="card-img-top" alt="{{ spotlight.last_name }}">
+                {% if spotlight.image %}
+                    <img src="{{ spotlight.image.url }}" class="card-img-top" alt="{{ spotlight.last_name }}">
+                {% else %}
+                    <p>No image available</p>
+                {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ spotlight.first_name_husband }} and {{ spotlight.first_name_wife }} {{ spotlight.last_name }}</h5>
                         <p class="card-text text-truncate">{{ spotlight.bio }}</p>
@@ -44,7 +52,11 @@
         {% for spotlight in ready %}
         <div class="col">
             <div class="card" style="width: 18rem;">
-                <img src="{{ spotlight.image.url }}" class="card-img-top" alt="{{ spotlight.last_name }}">
+                {% if spotlight.image %}
+                    <img src="{{ spotlight.image.url }}" class="card-img-top" alt="{{ spotlight.last_name }}">
+                {% else %}
+                    <p>No image available</p>
+                {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ spotlight.first_name_husband }} and {{ spotlight.first_name_wife }} {{ spotlight.last_name }}</h5>
                         <p class="card-text text-truncate">{{ spotlight.bio }}</p>
@@ -61,7 +73,11 @@
         {% for spotlight in planned %}
         <div class="col">
             <div class="card" style="width: 18rem;">
-                <img src="{{ spotlight.image.url }}" class="card-img-top" alt="{{ spotlight.last_name }}">
+                {% if spotlight.image.file %}
+                    <img src="{{ spotlight.image.url }}" class="card-img-top" alt="{{ spotlight.last_name }}">
+                {% else %}
+                    <p>No image available</p>
+                {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ spotlight.first_name_husband }} and {{ spotlight.first_name_wife }} {{ spotlight.last_name }}</h5>
                         <p class="card-text text-truncate">{{ spotlight.bio }}</p>
@@ -77,7 +93,11 @@
         {% for spotlight in slacked %}
         <div class="col">
             <div class="card" style="width: 18rem;">
-                <img src="{{ spotlight.image.url }}" class="card-img-top" alt="{{ spotlight.last_name }}">
+                {% if spotlight.image %}
+                    <img src="{{ spotlight.image.url }}" class="card-img-top" alt="{{ spotlight.last_name }}">
+                {% else %}
+                    <p>No image available</p>
+                {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ spotlight.first_name_husband }} and {{ spotlight.first_name_wife }} {{ spotlight.last_name }}</h5>
                         <p class="card-text text-truncate">{{ spotlight.bio }}</p>
